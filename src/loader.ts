@@ -53,6 +53,12 @@ export function loader(
 			case 'init':
 				const loadedObject = item[1];
 
+				if (!loadedObject?.clientId) {
+					throw new Error(
+						`Failed to start Widget [${instanceName}]. 'init' method must have 'clientId' property.`
+					);
+				}
+
 				targetElement = win.document.body.appendChild(
 					win.document.createElement('div')
 				);

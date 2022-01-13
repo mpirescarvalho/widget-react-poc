@@ -5,5 +5,5 @@ type AppProps = {
 };
 
 export function App({ clientId }: AppProps) {
-	return <Container>Hello World: {clientId}</Container>;
+	return <Container>Client: {clientId}</Container>;
 }
