@@ -11,10 +11,11 @@ type LoaderObject = {
 };
 
 export function loader(
-	win: Window,
-	scriptElement: Element | null,
 	render: (element: HTMLElement, config: WidgetConfiguration) => void
 ) {
+	const win = window;
+	const scriptElement = window.document.currentScript;
+
 	const instanceName =
 		scriptElement?.attributes.getNamedItem('id')?.value ?? DEFAULT_NAME;
 
